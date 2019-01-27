@@ -1,0 +1,32 @@
+<nav class="navbar navbar-light bg-light mb-5">
+  <span class="navbar-brand mb-0 h1">Todo app</span>
+</nav>
+
+<main>
+
+  <app-todos-form  (todosStorage)="todosUiInit($event)"></app-todos-form>
+
+  <div *ngIf="todos.length" class="todos-table mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-8 mx-auto">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <td>Title</td>
+                <td>Text</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let todo of todos">
+                <td>{{ todo.title }}</td>
+                <td>{{ todo.text }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
